@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - dev
-      - master
+      - main
 
 jobs:
   build:
@@ -33,7 +33,7 @@ jobs:
           password: ${{ secrets.CR_PAT }}
       - name: Build and Push Latest
         uses: docker/build-push-action@v2
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         with:
           platforms: linux/amd64,linux/arm64
           push: true
