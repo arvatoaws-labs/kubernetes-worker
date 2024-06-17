@@ -37,7 +37,7 @@ jobs:
         #username: jenkins-arvato
         #password: ${{ secrets.CR_PAT }}
     - name: Build and Push Latest
-      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@v6
       if: github.ref == 'refs/heads/main'
       with:
         platforms: linux/amd64,linux/arm64
@@ -47,7 +47,7 @@ jobs:
         cache-from: type=registry,ref=ghcr.io/arvatoaws-labs/kubernetes-worker:latest
         cache-to: type=inline
     - name: Build and Push Dev
-      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@v6
       if: github.ref == 'refs/heads/dev'
       with:
         platforms: linux/amd64,linux/arm64
