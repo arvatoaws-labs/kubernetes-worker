@@ -24,7 +24,7 @@ jobs:
         username: ${{github.actor}}
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: Build and Push Latest
-      uses: docker/build-push-action@v6
+      uses: docker/build-push-action@v7
       if: github.ref == 'refs/heads/main'
       with:
         push: true
@@ -33,7 +33,7 @@ jobs:
         cache-from: type=registry,ref=ghcr.io/arvatoaws-labs/kubernetes-worker:latest-arm64
         cache-to: type=inline
     - name: Build and Push Dev
-      uses: docker/build-push-action@v6
+      uses: docker/build-push-action@v7
       if: github.ref == 'refs/heads/dev'
       with:
         push: true
@@ -55,7 +55,7 @@ jobs:
         username: ${{github.actor}}
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: Build and Push Latest
-      uses: docker/build-push-action@v6
+      uses: docker/build-push-action@v7
       if: github.ref == 'refs/heads/main'
       with:
         push: true
@@ -64,7 +64,7 @@ jobs:
         cache-from: type=registry,ref=ghcr.io/arvatoaws-labs/kubernetes-worker:latest-amd64
         cache-to: type=inline
     - name: Build and Push Dev
-      uses: docker/build-push-action@v6
+      uses: docker/build-push-action@v7
       if: github.ref == 'refs/heads/dev'
       with:
         push: true
