@@ -1,5 +1,5 @@
-FROM ghcr.io/arvatoaws-labs/fedora:43
+FROM ghcr.io/arvatoaws-labs/fedora:44
 
 VOLUME /var/lib/docker
 
-RUN dnf upgrade -y && dnf install -y sed lz4 awscli wget curl kubernetes1.35-client git openssh-clients openssl jq awscli bc findutils unzip mariadb redis rsync postgresql screen bind-utils procps nodejs npm traceroute gawk golang-oras
+RUN dnf upgrade -y && dnf install -y sed lz4 awscli wget curl kubernetes1.35-client git openssh-clients openssl jq awscli bc findutils unzip mariadb redis rsync postgresql screen bind-utils procps nodejs npm traceroute gawk golang-oras && dnf clean all
